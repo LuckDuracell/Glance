@@ -10,9 +10,11 @@
 		0A66BF4B2693FE5B0007FF7F /* GlanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF4A2693FE5B0007FF7F /* GlanceApp.swift */; };
 		0A66BF4D2693FE5B0007FF7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF4C2693FE5B0007FF7F /* ContentView.swift */; };
 		0A66BF4F2693FE5C0007FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A66BF4E2693FE5C0007FF7F /* Assets.xcassets */; };
-		0A66BF522693FE5C0007FF7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A66BF512693FE5C0007FF7F /* Preview Assets.xcassets */; };
 		0A66BF5C2693FE5C0007FF7F /* GlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF5B2693FE5C0007FF7F /* GlanceTests.swift */; };
 		0A66BF662693FE5C0007FF7F /* GlanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF652693FE5C0007FF7F /* GlanceUITests.swift */; };
+		0A66BF732693FF010007FF7F /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF722693FF010007FF7F /* Background.swift */; };
+		0A66BF752693FF450007FF7F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF742693FF450007FF7F /* HomeView.swift */; };
+		0A66BF77269400B80007FF7F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF76269400B80007FF7F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +39,13 @@
 		0A66BF4A2693FE5B0007FF7F /* GlanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceApp.swift; sourceTree = "<group>"; };
 		0A66BF4C2693FE5B0007FF7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A66BF4E2693FE5C0007FF7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0A66BF512693FE5C0007FF7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A66BF572693FE5C0007FF7F /* GlanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A66BF5B2693FE5C0007FF7F /* GlanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceTests.swift; sourceTree = "<group>"; };
 		0A66BF612693FE5C0007FF7F /* GlanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A66BF652693FE5C0007FF7F /* GlanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceUITests.swift; sourceTree = "<group>"; };
+		0A66BF722693FF010007FF7F /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		0A66BF742693FF450007FF7F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0A66BF76269400B80007FF7F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,19 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				0A66BF4A2693FE5B0007FF7F /* GlanceApp.swift */,
+				0A66BF722693FF010007FF7F /* Background.swift */,
 				0A66BF4C2693FE5B0007FF7F /* ContentView.swift */,
+				0A66BF78269400C40007FF7F /* Views */,
 				0A66BF4E2693FE5C0007FF7F /* Assets.xcassets */,
-				0A66BF502693FE5C0007FF7F /* Preview Content */,
 			);
 			path = Glance;
-			sourceTree = "<group>";
-		};
-		0A66BF502693FE5C0007FF7F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0A66BF512693FE5C0007FF7F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		0A66BF5A2693FE5C0007FF7F /* GlanceTests */ = {
@@ -122,6 +119,15 @@
 				0A66BF652693FE5C0007FF7F /* GlanceUITests.swift */,
 			);
 			path = GlanceUITests;
+			sourceTree = "<group>";
+		};
+		0A66BF78269400C40007FF7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A66BF742693FF450007FF7F /* HomeView.swift */,
+				0A66BF76269400B80007FF7F /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A66BF522693FE5C0007FF7F /* Preview Assets.xcassets in Resources */,
 				0A66BF4F2693FE5C0007FF7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,8 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A66BF77269400B80007FF7F /* SettingsView.swift in Sources */,
 				0A66BF4D2693FE5B0007FF7F /* ContentView.swift in Sources */,
+				0A66BF752693FF450007FF7F /* HomeView.swift in Sources */,
 				0A66BF4B2693FE5B0007FF7F /* GlanceApp.swift in Sources */,
+				0A66BF732693FF010007FF7F /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +422,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Glance/Preview Content\"";
 				DEVELOPMENT_TEAM = RV78ENMXZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -423,7 +430,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,7 +440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,7 +451,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Glance/Preview Content\"";
 				DEVELOPMENT_TEAM = RV78ENMXZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -453,7 +459,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +469,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

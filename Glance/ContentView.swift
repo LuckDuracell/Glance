@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.systemGray4
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            TabView() {
+                HomeView()
+                    .tabItem({Label("Weather", systemImage: "cloud.sun.fill")})
+
+                SettingsView()
+                    .tabItem({Label("Settings", systemImage: "gear")})
+            }
+        } .accentColor(.pink)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
