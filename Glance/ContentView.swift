@@ -18,9 +18,11 @@ struct ContentView: View {
             TabView() {
                 HomeView()
                     .tabItem({Label("Weather", systemImage: "cloud.sun.fill")})
+                    .environment(\.colorScheme, .dark)
 
                 SettingsView()
                     .tabItem({Label("Settings", systemImage: "gear")})
+                    .environment(\.colorScheme, .light)
             }
         } .accentColor(.pink)
     }
@@ -29,6 +31,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environment(\.colorScheme, .dark)
     }
 }

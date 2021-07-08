@@ -8,9 +8,52 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
         ZStack {
             Background()
+            VStack {
+                List {
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                } .frame(height: 300)
+                .padding(.bottom, -100)
+                List {
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Settings Button")
+                    }
+                } .frame(height: 300)
+                Spacer()
+            }
         }
     }
 }
