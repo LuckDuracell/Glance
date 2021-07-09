@@ -12,6 +12,8 @@ struct HomeView: View {
     var days = ["Today", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     @State var showMore = [false, false, false, false, false, false, false]
     
+    
+    
     var body: some View {
         ZStack {
             Background()
