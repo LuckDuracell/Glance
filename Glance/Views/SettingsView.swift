@@ -18,34 +18,12 @@ struct SettingsView: View {
             Background()
             VStack {
                 List {
-                    Button {
+                    NavigationLink("Display Settings", destination: {
                         
-                    } label: {
-                        Text("Settings Button")
-                    }
-                    Button {
+                    })
+                    NavigationLink("Location Settings", destination: {
                         
-                    } label: {
-                        Text("Settings Button")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Text("Settings Button")
-                    }
-                } .frame(height: 300)
-                .padding(.bottom, -100)
-                List {
-                    Button {
-                        
-                    } label: {
-                        Text("Settings Button")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Text("Settings Button")
-                    }
+                    })
                     Button {
                         
                     } label: {
