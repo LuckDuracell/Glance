@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A607B96269A74370046FA31 /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A607B95269A74370046FA31 /* LocationSettings.swift */; };
+		0A607B98269A74500046FA31 /* DisplaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A607B97269A74500046FA31 /* DisplaySettings.swift */; };
 		0A66BF4B2693FE5B0007FF7F /* GlanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF4A2693FE5B0007FF7F /* GlanceApp.swift */; };
 		0A66BF4D2693FE5B0007FF7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66BF4C2693FE5B0007FF7F /* ContentView.swift */; };
 		0A66BF4F2693FE5C0007FF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A66BF4E2693FE5C0007FF7F /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A607B95269A74370046FA31 /* LocationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSettings.swift; sourceTree = "<group>"; };
+		0A607B97269A74500046FA31 /* DisplaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettings.swift; sourceTree = "<group>"; };
 		0A66BF472693FE5B0007FF7F /* Glance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A66BF4A2693FE5B0007FF7F /* GlanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceApp.swift; sourceTree = "<group>"; };
 		0A66BF4C2693FE5B0007FF7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				0A66BF742693FF450007FF7F /* HomeView.swift */,
 				0A66BF76269400B80007FF7F /* SettingsView.swift */,
+				0A607B97269A74500046FA31 /* DisplaySettings.swift */,
+				0A607B95269A74370046FA31 /* LocationSettings.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 				0A66BF77269400B80007FF7F /* SettingsView.swift in Sources */,
 				0A66BF4D2693FE5B0007FF7F /* ContentView.swift in Sources */,
 				0A66BF752693FF450007FF7F /* HomeView.swift in Sources */,
+				0A607B96269A74370046FA31 /* LocationSettings.swift in Sources */,
 				0A66BF4B2693FE5B0007FF7F /* GlanceApp.swift in Sources */,
 				0A66BF732693FF010007FF7F /* Background.swift in Sources */,
+				0A607B98269A74500046FA31 /* DisplaySettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

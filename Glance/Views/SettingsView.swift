@@ -33,7 +33,7 @@ struct SettingsView: View {
                                     .resizable()
                                     .foregroundColor(.red)
                                     .frame(width: 25, height: 25, alignment: .center)
-                                Text("Display Settings")
+                                Text("Display")
                                     .foregroundColor(.pink)
                                 Spacer()
                                 Image(systemName: "chevron.right")
@@ -52,7 +52,7 @@ struct SettingsView: View {
                                     .resizable()
                                     .foregroundColor(.blue)
                                     .frame(width: 25, height: 25, alignment: .center)
-                                Text("Location Settings")
+                                Text("Location")
                                     .foregroundColor(.pink)
                                 Spacer()
                                 Image(systemName: "chevron.right")
@@ -75,12 +75,12 @@ struct SettingsView: View {
             if page1 {
                 DisplaySettings()
                     .transition(.move(edge: .trailing))
-                    .shadow(radius: 15)
+                    //.shadow(radius: 15)
             }
             if page2 {
                 LocationSettings()
                     .transition(.move(edge: .trailing))
-                    .shadow(radius: 15)
+                    //.shadow(radius: 15)
             }
         }
     }
@@ -92,70 +92,4 @@ struct SettingsView_Previews: PreviewProvider {
     }
 }
 
-struct DisplaySettings: View {
-    
-    @State var goBack = false
-    
-    var body: some View {
-        ZStack {
-            Background()
-            VStack {
-                HStack {
-                    Button {
-                        goBack = true
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.white)
-                        Text("Back")
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    Spacer()
-                }
-                
-                //Display Settings View
-                
-                //-----------
-                
-                Spacer()
-            }
-            if goBack {
-                SettingsView()
-            }
-        }
-    }
-}
 
-struct LocationSettings: View {
-    
-    @State var goBack = false
-    
-    var body: some View {
-        ZStack {
-            Background()
-            VStack {
-                HStack {
-                    Button {
-                        goBack = true
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.white)
-                        Text("Back")
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    Spacer()
-                }
-                
-                //Location Settings View
-                
-                //-----------
-                
-                Spacer()
-            }
-            if goBack {
-                SettingsView()
-            }
-        }
-    }
-}
