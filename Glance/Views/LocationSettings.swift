@@ -13,9 +13,14 @@ struct LocationSettings: View {
     @State var automaticLocation = true
     @State var location = "New York City, NY"
     
+    @Environment(\.colorScheme) var colorScheme
     init() {
         UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .white
+        if colorScheme == .dark {
+            UITableViewCell.appearance().backgroundColor = .orange
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+        }
     }
     
     var body: some View {

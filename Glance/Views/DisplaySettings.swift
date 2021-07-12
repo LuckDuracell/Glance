@@ -14,9 +14,14 @@ struct DisplaySettings: View {
     
     @State var darkMode = false
     
+    @Environment(\.colorScheme) var colorScheme
     init() {
         UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .white
+        if colorScheme == .dark {
+            UITableViewCell.appearance().backgroundColor = .orange
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+        }
     }
     
     var body: some View {
@@ -41,6 +46,7 @@ struct DisplaySettings: View {
                 //Display Settings View
                 HStack {
                     Text("Colors:")
+                        .bold()
                         .foregroundColor(.white.opacity(1))
                     Spacer()
                 } .padding(.horizontal, 20)
@@ -50,27 +56,37 @@ struct DisplaySettings: View {
                         .toggleStyle(SwitchToggleStyle(tint: .pink))
                     Button {
                         if automaticColors != true {
-                            darkMode = false
+                            withAnimation {
+                                darkMode = false
+                            }
                         }
                     } label: {
                         HStack {
                             Text("Light Mode")
                             Spacer()
-                            Image(systemName: darkMode ? "" : "checkmark")
+                            if darkMode != true {
+                            Image(systemName: "checkmark")
+                                    .animation(.default)
+                            }
                         }
-                        .foregroundColor(automaticColors ? .gray : .blue)
+                        .foregroundColor(automaticColors ? .gray : .pink)
                     }
                     Button {
                         if automaticColors != true {
-                            darkMode = true
+                            withAnimation {
+                                darkMode = true
+                            }
                         }
                     } label: {
                         HStack {
                             Text("Dark Mode")
                             Spacer()
-                            Image(systemName: darkMode ? "checkmark" : "")
+                            if darkMode {
+                            Image(systemName: "checkmark")
+                                    .animation(.default)
+                            }
                         }
-                        .foregroundColor(automaticColors ? .gray : .blue)
+                        .foregroundColor(automaticColors ? .gray : .pink)
                     }
 
                 }

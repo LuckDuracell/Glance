@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
+    @Environment(\.colorScheme) var colorScheme
     init() {
         UITabBar.appearance().backgroundColor = UIColor.systemGray4
+        if colorScheme == .dark {
+            UITableViewCell.appearance().backgroundColor = .orange
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+        }
     }
     
     var body: some View {
@@ -22,7 +29,6 @@ struct ContentView: View {
 
                 SettingsView()
                     .tabItem({Label("Settings", systemImage: "gear")})
-                    .environment(\.colorScheme, .light)
             }
         } .accentColor(.pink)
     }

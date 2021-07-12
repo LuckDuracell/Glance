@@ -9,9 +9,14 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     init() {
         UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .white
+        if colorScheme == .dark {
+            UITableViewCell.appearance().backgroundColor = .orange
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+        }
     }
     
     @State var page1 = false
@@ -29,10 +34,15 @@ struct SettingsView: View {
                             }
                         } label: {
                             HStack {
-                                Image(systemName: "iphone.circle.fill")
-                                    .resizable()
-                                    .foregroundColor(.red)
-                                    .frame(width: 25, height: 25, alignment: .center)
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 24, height: 24, alignment: .center)
+                                        .foregroundColor(.white)
+                                    Image(systemName: "iphone.circle.fill")
+                                        .resizable()
+                                        .foregroundColor(.red)
+                                        .frame(width: 25, height: 25, alignment: .center)
+                                }
                                 Text("Display")
                                     .foregroundColor(.pink)
                                 Spacer()
@@ -48,10 +58,15 @@ struct SettingsView: View {
                             }
                         } label: {
                             HStack {
-                                Image(systemName: "location.circle.fill")
-                                    .resizable()
-                                    .foregroundColor(.blue)
-                                    .frame(width: 25, height: 25, alignment: .center)
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 24, height: 24, alignment: .center)
+                                        .foregroundColor(.white)
+                                    Image(systemName: "location.circle.fill")
+                                        .resizable()
+                                        .foregroundColor(.blue)
+                                        .frame(width: 25, height: 25, alignment: .center)
+                                }
                                 Text("Location")
                                     .foregroundColor(.pink)
                                 Spacer()
@@ -61,10 +76,15 @@ struct SettingsView: View {
                         }
                     }
                     HStack {
-                        Image(systemName: "dollarsign.circle.fill")
-                            .resizable()
-                            .foregroundColor(.green)
-                            .frame(width: 25, height: 25, alignment: .center)
+                        ZStack {
+                            Circle()
+                                .frame(width: 24, height: 24, alignment: .center)
+                                .foregroundColor(.white)
+                            Image(systemName: "dollarsign.circle.fill")
+                                .resizable()
+                                .foregroundColor(.green)
+                                .frame(width: 25, height: 25, alignment: .center)
+                        }
                         Link("Support the Dev", destination: URL(string:"https://www.buymeacoffee.com/luckdev")!)
                             .foregroundColor(.pink)
                     }
