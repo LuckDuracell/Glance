@@ -14,8 +14,10 @@ struct SettingsView: View {
         UITableView.appearance().backgroundColor = .clear
         if colorScheme == .dark {
             UITableViewCell.appearance().backgroundColor = .orange
+            UITabBar.appearance().backgroundColor = UIColor.systemGray4
         } else {
             UITableViewCell.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor.white
         }
     }
     
@@ -88,6 +90,34 @@ struct SettingsView: View {
                         Link("Support the Dev", destination: URL(string:"https://www.buymeacoffee.com/luckdev")!)
                             .foregroundColor(.pink)
                     }
+                    
+                    HStack {
+                        Button {
+                            UITableView.appearance().backgroundColor = .clear
+                            if colorScheme == .dark {
+                                UITableViewCell.appearance().backgroundColor = .orange
+                                UITabBar.appearance().backgroundColor = UIColor.systemGray4
+                            } else {
+                                UITableViewCell.appearance().backgroundColor = .white
+                                UITabBar.appearance().backgroundColor = UIColor.white
+                            }
+                        } label: {
+                            HStack {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 24, height: 24, alignment: .center)
+                                        .foregroundColor(.white)
+                                    Image(systemName: "list.bullet.circle.fill")
+                                        .resizable()
+                                        .foregroundColor(.yellow)
+                                        .frame(width: 25, height: 25, alignment: .center)
+                                }
+                                Text("Update Colors")
+                                    .foregroundColor(.pink)
+                            }
+                        }
+                    }
+                    
                 } .frame(height: 300)
                 .padding(.top, 30)
                 Spacer()
@@ -109,6 +139,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environment(\.colorScheme, .dark)
     }
 }
 

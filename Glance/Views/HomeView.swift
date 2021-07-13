@@ -12,7 +12,21 @@ struct HomeView: View {
     var days = ["Today", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     @State var showMore = [false, false, false, false, false, false, false]
     
+    @State var goodColor = Color.white
     
+    @Environment(\.colorScheme) var colorScheme
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+        if colorScheme == .dark {
+            UITableViewCell.appearance().backgroundColor = .orange
+            UITabBar.appearance().backgroundColor = UIColor.systemGray4
+            goodColor = .white
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor.white
+            goodColor = .pink
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -22,20 +36,20 @@ struct HomeView: View {
                 VStack {
                     Text("New York City")
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .padding()
                         .padding(.top, -30)
                     
                     VStack {
                         Text("Rainy Day")
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .light ? .purple : .white)
                         
                         Image(systemName: "cloud.rain.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100, height: 100, alignment: .center)
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .light ? .purple : .white)
                             
                         Text("74º")
                             .font(.system(size: 35, weight: .bold, design: .rounded))
@@ -65,7 +79,7 @@ struct HomeView: View {
                 HStack {
                     VStack {
                         Text("Lots of fog and rain, continuing until the morning")
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .light ? .purple : .white)
                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                         Divider()
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -77,7 +91,7 @@ struct HomeView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 30, height: 30, alignment: .center)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(colorScheme == .light ? .purple : .white)
                                     Text("74º")
                                         .font(.system(size: 17, weight: .semibold, design: .rounded))
                                 } .padding(8)
@@ -93,13 +107,13 @@ struct HomeView: View {
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 30, height: 30, alignment: .center)
-                                                .foregroundColor(.white)
+                                                .foregroundColor(colorScheme == .light ? .purple : .white)
                                         } else {
                                             Image(systemName: "cloud.rain.fill")
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 30, height: 30, alignment: .center)
-                                                .foregroundColor(.white)
+                                                .foregroundColor(colorScheme == .light ? .purple : .white)
                                         }
                                         Text("\(temp)º")
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
@@ -128,7 +142,7 @@ struct HomeView: View {
                                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                             Image(systemName: num != 3 ? "cloud.rain.fill" : "cloud.fill")
                                 .renderingMode(.template)
-                                .foregroundColor(.white)
+                                .foregroundColor(colorScheme == .light ? .purple : .white)
                             
                             Button {
                                 for index in 0...6 {
@@ -192,7 +206,11 @@ struct HomeView: View {
                 
             }
             .shadow(radius: 40)
-        }
+        } .onAppear(perform: {
+            if colorScheme == .light {
+                goodColor = .purple
+            }
+        })
     }
 }
 

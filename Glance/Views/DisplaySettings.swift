@@ -19,8 +19,10 @@ struct DisplaySettings: View {
         UITableView.appearance().backgroundColor = .clear
         if colorScheme == .dark {
             UITableViewCell.appearance().backgroundColor = .orange
+            UITabBar.appearance().backgroundColor = UIColor.systemGray4
         } else {
             UITableViewCell.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor.white
         }
     }
     

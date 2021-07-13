@@ -12,11 +12,13 @@ struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.systemGray4
+        UITableView.appearance().backgroundColor = .clear
         if colorScheme == .dark {
             UITableViewCell.appearance().backgroundColor = .orange
+            UITabBar.appearance().backgroundColor = UIColor.systemGray4
         } else {
             UITableViewCell.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor.white
         }
     }
     
@@ -25,7 +27,6 @@ struct ContentView: View {
             TabView() {
                 HomeView()
                     .tabItem({Label("Weather", systemImage: "cloud.sun.fill")})
-                    .environment(\.colorScheme, .dark)
 
                 SettingsView()
                     .tabItem({Label("Settings", systemImage: "gear")})
@@ -37,5 +38,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
