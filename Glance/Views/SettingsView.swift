@@ -9,15 +9,19 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) var colorScheme2
+    
     init() {
         UITableView.appearance().backgroundColor = .clear
-        if colorScheme == .dark {
+        if colorScheme2 == .dark {
             UITableViewCell.appearance().backgroundColor = .orange
             UITabBar.appearance().backgroundColor = UIColor.systemGray4
+            print("dark mode")
         } else {
             UITableViewCell.appearance().backgroundColor = .white
             UITabBar.appearance().backgroundColor = UIColor.white
+            print("light mode")
+            print(colorScheme2)
         }
     }
     
@@ -94,7 +98,7 @@ struct SettingsView: View {
                     HStack {
                         Button {
                             UITableView.appearance().backgroundColor = .clear
-                            if colorScheme == .dark {
+                            if colorScheme2 == .dark {
                                 UITableViewCell.appearance().backgroundColor = .orange
                                 UITabBar.appearance().backgroundColor = UIColor.systemGray4
                             } else {
@@ -139,7 +143,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .environment(\.colorScheme, .dark)
     }
 }
 
