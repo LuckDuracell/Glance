@@ -11,6 +11,21 @@ struct ContentView: View {
     
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment (\.colorScheme) var colorScheme3
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+        if colorScheme3 == .dark {
+            UITableViewCell.appearance().backgroundColor = .darkGray
+            UITabBar.appearance().backgroundColor = UIColor.darkGray
+            print("dark mode")
+        } else {
+            UITableViewCell.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor.white
+            print("light mode")
+            print(colorScheme3)
+        }
+    }
     
     var body: some View {
         ZStack {

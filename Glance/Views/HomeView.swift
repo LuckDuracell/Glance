@@ -36,26 +36,28 @@ struct HomeView: View {
                 VStack {
                     Text("New York City")
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .foregroundColor(.primary)
+                        .foregroundColor(.white)
                         .padding()
                         .padding(.top, -30)
                     
                     VStack {
                         Text("Rainy Day")
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .foregroundColor(colorScheme == .light ? .purple : .white)
+                            .foregroundColor(colorScheme == .light ? .pink : .white)
                         
                         Image(systemName: "cloud.rain.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100, height: 100, alignment: .center)
-                            .foregroundColor(colorScheme == .light ? .purple : .white)
+                            .foregroundColor(colorScheme == .light ? .pink : .white)
                             
                         Text("74º")
+                            .foregroundColor(colorScheme == .light ? .pink : .white)
                             .font(.system(size: 35, weight: .bold, design: .rounded))
                         
                         HStack {
                             Text("H: 82º  L: 57º")
+                                .foregroundColor(colorScheme == .light ? .pink : .white)
                                 .font(.system(size: 22, weight: .bold, design: .rounded))
                                 .padding()
                         }
@@ -79,7 +81,7 @@ struct HomeView: View {
                 HStack {
                     VStack {
                         Text("Lots of fog and rain, continuing until the morning")
-                            .foregroundColor(colorScheme == .light ? .purple : .white)
+                            .foregroundColor(colorScheme == .light ? .pink : .white)
                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                         Divider()
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -91,7 +93,7 @@ struct HomeView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 30, height: 30, alignment: .center)
-                                        .foregroundColor(colorScheme == .light ? .purple : .white)
+                                        .foregroundColor(colorScheme == .light ? .pink : .white)
                                     Text("74º")
                                         .font(.system(size: 17, weight: .semibold, design: .rounded))
                                 } .padding(8)
@@ -107,13 +109,13 @@ struct HomeView: View {
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 30, height: 30, alignment: .center)
-                                                .foregroundColor(colorScheme == .light ? .purple : .white)
+                                                .foregroundColor(colorScheme == .light ? .pink : .white)
                                         } else {
                                             Image(systemName: "cloud.rain.fill")
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 30, height: 30, alignment: .center)
-                                                .foregroundColor(colorScheme == .light ? .purple : .white)
+                                                .foregroundColor(colorScheme == .light ? .pink : .white)
                                         }
                                         Text("\(temp)º")
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
@@ -142,7 +144,7 @@ struct HomeView: View {
                                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                             Image(systemName: num != 3 ? "cloud.rain.fill" : "cloud.fill")
                                 .renderingMode(.template)
-                                .foregroundColor(colorScheme == .light ? .purple : .white)
+                                .foregroundColor(colorScheme == .light ? .pink : .white)
                             
                             Button {
                                 for index in 0...6 {
@@ -166,6 +168,7 @@ struct HomeView: View {
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                                         Spacer()
                                         Image(systemName: num != 3 ? "cloud.rain.fill" : "cloud.fill")
+                                            .foregroundColor(colorScheme == .light ? .pink : .white)
                                         Text("\(temp)")
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                                     } .padding(3)
@@ -179,6 +182,7 @@ struct HomeView: View {
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                                         Spacer()
                                         Image(systemName: num != 3 ? "cloud.rain.fill" : "cloud.fill")
+                                            .foregroundColor(colorScheme == .light ? .pink : .white)
                                         Text("\(temp)")
                                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                                     } .padding(3)

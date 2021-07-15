@@ -11,20 +11,6 @@ struct SettingsView: View {
     
     @Environment(\.colorScheme) var colorScheme2
     
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-        if colorScheme2 == .dark {
-            UITableViewCell.appearance().backgroundColor = .orange
-            UITabBar.appearance().backgroundColor = UIColor.systemGray4
-            print("dark mode")
-        } else {
-            UITableViewCell.appearance().backgroundColor = .white
-            UITabBar.appearance().backgroundColor = UIColor.white
-            print("light mode")
-            print(colorScheme2)
-        }
-    }
-    
     @State var page1 = false
     @State var page2 = false
     
