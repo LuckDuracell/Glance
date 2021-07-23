@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
+
+
+
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(sortDescriptors: [])
+    private var toggles: FetchedResults<SettingsToggle>
     
     @Environment(\.colorScheme) var colorScheme
     @Environment (\.colorScheme) var colorScheme3
@@ -17,11 +25,11 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = .clear
         if colorScheme3 == .dark {
             UITableViewCell.appearance().backgroundColor = .darkGray
-            UITabBar.appearance().backgroundColor = UIColor.darkGray
+            //UITabBar.appearance().backgroundColor = UIColor.darkGray
             print("dark mode")
         } else {
             UITableViewCell.appearance().backgroundColor = .white
-            UITabBar.appearance().backgroundColor = UIColor.white
+            //UITabBar.appearance().backgroundColor = UIColor.white
             print("light mode")
             print(colorScheme3)
         }

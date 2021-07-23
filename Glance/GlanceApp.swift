@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct GlanceApp: App {
+    
+    let persistanceContainer = PersistanceController.shared
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistanceContainer.container.viewContext)
         }
     }
 }

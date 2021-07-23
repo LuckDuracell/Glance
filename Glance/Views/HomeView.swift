@@ -19,11 +19,11 @@ struct HomeView: View {
         UITableView.appearance().backgroundColor = .clear
         if colorScheme == .dark {
             UITableViewCell.appearance().backgroundColor = .orange
-            UITabBar.appearance().backgroundColor = UIColor.systemGray4
+            //UITabBar.appearance().backgroundColor = UIColor.systemGray4
             goodColor = .white
         } else {
             UITableViewCell.appearance().backgroundColor = .white
-            UITabBar.appearance().backgroundColor = UIColor.white
+            //UITabBar.appearance().backgroundColor = UIColor.white
             goodColor = .pink
         }
     }
@@ -31,6 +31,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Background()
+            VStack {
             ScrollView {
                 
                 VStack {
@@ -208,7 +209,13 @@ struct HomeView: View {
                 .cornerRadius(15)
                 .padding()
                 
-            }
+            } .overlay(
+                Rectangle()
+                    .frame(width: UIScreen.main.bounds.width, height: 100, alignment: .bottom)
+                    .foregroundColor(LinearGradient(colors: [.clear, .white.opacity(0.3)], startPoint: .top, endPoint: .bottom))
+            )
+                
+        }
             .shadow(radius: 40)
         } .onAppear(perform: {
             if colorScheme == .light {
