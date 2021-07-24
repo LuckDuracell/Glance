@@ -9,21 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var days = ["Today", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var days = ["Today", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]
+    
     @State var showMore = [false, false, false, false, false, false, false]
     
     @State var goodColor = Color.white
     
     @Environment(\.colorScheme) var colorScheme
+    
     init() {
         UITableView.appearance().backgroundColor = .clear
         if colorScheme == .dark {
-            UITableViewCell.appearance().backgroundColor = .orange
-            //UITabBar.appearance().backgroundColor = UIColor.systemGray4
+            UITableViewCell.appearance().backgroundColor = .systemGray4
             goodColor = .white
         } else {
             UITableViewCell.appearance().backgroundColor = .white
-            //UITabBar.appearance().backgroundColor = UIColor.white
             goodColor = .pink
         }
     }
