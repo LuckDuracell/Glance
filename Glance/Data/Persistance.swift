@@ -18,7 +18,7 @@ struct PersistanceController {
         
         
         container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as? NSError? {
+            if let error = error as NSError? {
                 fatalError("Unresolved error: \(error)")
             }
         }

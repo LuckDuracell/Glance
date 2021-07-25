@@ -42,7 +42,7 @@ struct ContentView: View {
                     .tabItem({Label("Weather", systemImage: "cloud.sun.fill")})
 
                 SettingsView()
-                    .tabItem({Label("Settings", systemImage: "gear")})
+                    .tabItem({Label("Settings", systemImage: "gearshape.2.fill")})
             }
         } .accentColor(.pink)
     }

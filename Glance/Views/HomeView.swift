@@ -197,7 +197,7 @@ struct HomeView: View {
                             .animation(.default, value: 10)
                         }
                         
-                        if days[dayNum] != "Sunday" {
+                        if days[dayNum] != "Monday" {
                             Divider()
                         }
                     })
@@ -209,11 +209,12 @@ struct HomeView: View {
                 .cornerRadius(15)
                 .padding()
                 
-            } .overlay(
-                Rectangle()
-                    .frame(width: UIScreen.main.bounds.width, height: 100, alignment: .bottom)
-                    .foregroundColor(LinearGradient(colors: [.clear, .white.opacity(0.3)], startPoint: .top, endPoint: .bottom))
-            )
+            }
+//            .overlay(
+//                Rectangle()
+//                    .frame(width: UIScreen.main.bounds.width, height: 100, alignment: .bottom)
+//                    .foregroundColor(LinearGradient(colors: [.clear, .white.opacity(0.3)], startPoint: .top, endPoint: .bottom))
+//            )
                 
         }
             .shadow(radius: 40)
